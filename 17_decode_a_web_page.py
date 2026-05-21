@@ -6,4 +6,5 @@ r = requests.get(url)
 soup = BeautifulSoup(r.text, 'html.parser')
 
 for heading in soup.find_all(class_='css-5mgoji'):
-    print(heading)
+    if (heading.text != ''):
+        print(heading.text)
